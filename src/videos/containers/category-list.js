@@ -3,13 +3,14 @@ import {
     FlatList,
     Text
 } from 'react-native'
+import { connect } from 'react-redux'
 
 import Layout from '../components/category-list-layout'
 import Empty from '../components/empty'
 import Separator from '../../sections/components/horizontal-separator'
 import Category from '../components/category'
 
-export default class SuggestionList extends Component {
+class CategoryList extends Component {
     keyExtractor = (item) => item.id.toString()
     itemSeparator = () => <Separator />
     renderEmpty = () => <Empty text="No hay Sugerencias" />
@@ -31,3 +32,11 @@ export default class SuggestionList extends Component {
         )
     }
 }
+
+function mapStateToProps(state){
+    return {
+        list:state.categoryList
+    }
+}
+
+export default connect(mapStateToProps)(CategoryList)

@@ -3,6 +3,8 @@ import {
     FlatList,
     Text
 } from 'react-native'
+import { connect } from 'react-redux'
+
 import Layout from '../components/suggestion-list-layout'
 import Empty from '../components/empty'
 import Separator from '../../sections/components/vertical-separator'
@@ -30,4 +32,10 @@ class SuggestionList extends Component {
     }
 }
 
-export default SuggestionList
+function mapStateToProps(state){
+    return {
+        list:state.suggestionList
+    }
+}
+
+export default connect(mapStateToProps)(SuggestionList)
