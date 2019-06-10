@@ -13,7 +13,15 @@ import Suggestion from '../components/suggestion'
 class SuggestionList extends Component {
     renderEmpty = () => <Empty text="No hay Sugerencias" />
     itemSeparator = () => <Separator color="red" />
-    renderItem = ({item}) => <Suggestion {...item} />
+    viewMovie = (item) => {
+        this.props.dispatch({
+            type:'SET_SELECTED_MOVIE',
+            payload:{
+                movie: item,
+            }
+        })
+    }
+    renderItem = ({item}) => <Suggestion onPress={() => { this.viewMovie(item) }} {...item} />
     keyExtractor = (item) => item.id.toString()
     render() {
         return (

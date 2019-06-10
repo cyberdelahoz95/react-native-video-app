@@ -12,6 +12,7 @@ import suggestionList from './videos/containers/suggestion-list';
 const persistConfig = {
     key: 'root',
     storage,
+    blacklist:['selectedMovie']
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
