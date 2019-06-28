@@ -1,5 +1,6 @@
 import { createStore } from 'redux';
 import { persistStore, persistReducer } from 'redux-persist';
+//TODO Find another storage
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web and AsyncStorage for react-native
 import reducer from './reducers/videos';
 import suggestionList from './videos/containers/suggestion-list';

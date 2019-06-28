@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 
-import MovieLayout from '../components/movie'
-import Header from '../../sections/components/header'
-import Player from '../../player/containers/player'
-import Close from '../../sections/components/close'
+import MovieLayout from '../components/movie';
+import Header from '../../sections/components/header';
+import Player from '../../player/containers/player';
+import Close from '../../sections/components/close';
+import Details from '../../videos/components/details';
 
 class Movie extends Component {
     closeVideo = () => {
@@ -24,9 +25,15 @@ class Movie extends Component {
                     />
                 </Header>
                 <Player />
+                <Details {...this.props.movie} />
             </MovieLayout>
         )
     }
 }
-
-export default connect(null)(Movie)
+function mapStateToProps (state) {
+    console.log({state})
+    return {
+        movie: state.selectedMovie
+    }
+}
+export default connect(mapStateToProps)(Movie)

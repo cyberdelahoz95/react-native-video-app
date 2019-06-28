@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
         overflow:'hidden',
         alignItems:'center',
         justifyContent:'center',
-
     },
     genre:{
         color:'white',

@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import { Text, View } from 'react-native';
-import { connect } from 'react-redux'
-import SuggestionList from './videos/containers/suggestion-list'
-import CategoryList from './videos/containers/category-list'
-import Home from './screens/containers/home'
-import Header from './sections/components/header'
-import Movie from './screens/containers/movie'
+import { connect } from 'react-redux';
 
-import Api from './utils/api'
+import SuggestionList from './videos/containers/suggestion-list';
+import CategoryList from './videos/containers/category-list';
+import Home from './screens/containers/home';
+import Header from './sections/components/header';
+import Movie from './screens/containers/movie';
+import Search from './sections/containers/search';
+import Api from './utils/api';
 
 class AppLayout extends Component {
     async componentDidMount(){
@@ -34,7 +35,7 @@ class AppLayout extends Component {
         return (
           <Home>
               <Header />
-              <Text>B</Text>
+              <Search />
               <CategoryList />
               <SuggestionList />
           </Home>
